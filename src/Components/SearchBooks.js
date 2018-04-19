@@ -11,15 +11,17 @@ import { DebounceInput } from 'react-debounce-input';
  * collection of books returned by the API request.
  */
 class SearchBooks extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            query: '',
+            searchBooks: [],
+            validQuery: false
+        };
+    }
     static propTypes = {
         onUpdateShelf: PropTypes.func.isRequired,
         getBookShelf: PropTypes.func.isRequired
-    }
-
-    state = {
-        query: '',
-        searchBooks: [],
-        validQuery: false
     }
 
     /**

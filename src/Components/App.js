@@ -9,11 +9,14 @@ import * as BooksAPI from '../utils/BooksAPI';
  * possible to navigate throughout the different parts of the application.
  */
 class App extends Component {
-    state = {
-        books: [],
-        reading: [],
-        toRead: [],
-        read: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            books: [],
+            reading: [],
+            toRead: [],
+            read: []
+        };
     }
 
     /**
