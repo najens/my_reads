@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import MyReads from './MyReads';
+import SearchBooks from './SearchBooks';
 import * as BooksAPI from '../utils/BooksAPI';
 
 class App extends Component {
@@ -76,6 +77,18 @@ class App extends Component {
         });
     };
 
+    /**
+     * Checks if book is on shelf in bookshelves and returns shelf or none
+     *
+     * @param {string} bookId
+     * @returns {string} current shelf of book or none
+     */
+    getBookShelf = (bookId) => {
+        let foundBook = this.state.books
+            .find((book) => book.id === bookId);
+        return foundBook ? foundBook.shelf : 'none';
+    };
+
     render() {
         const { reading, toRead, read } = this.state;
 
@@ -87,6 +100,12 @@ class App extends Component {
                         toRead={toRead}
                         read={read}
                         onUpdateShelf={this.updateShelf}
+                    />
+                )} />
+                <Route path='/search' render={() => (
+                    <SearchBooks
+                        onUpdateShelf={this.updateShelf}
+                        getBookShelf={this.getBookShelf}
                     />
                 )} />
             </div>
