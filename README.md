@@ -1,5 +1,5 @@
-# myreads
-myreads is a React web application that allows a user to categorize and keep track of books that they have read, want to read, or are currently reading.
+# my_reads
+my_reads is a React web application that allows a user to categorize and keep track of books that they have read, want to read, or are currently reading.
 
 ## Test Out App
 Go to https://najens.github.io/my_reads/ to test out app.
@@ -30,7 +30,7 @@ $ npm install
 ```
 $ npm start
 ```
-- the app will open in browser at http://localhost:3000
+The app will open in browser at http://localhost:3000
 
 ## Build App Bundle for Production
 ```
