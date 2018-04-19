@@ -6,6 +6,10 @@ import Book from './Book';
 import { searchTerms } from '../utils/SearchTerms';
 import { DebounceInput } from 'react-debounce-input';
 
+/**
+ * Component that handles search input and renders the
+ * collection of books returned by the API request.
+ */
 class SearchBooks extends React.Component {
     static propTypes = {
         onUpdateShelf: PropTypes.func.isRequired,

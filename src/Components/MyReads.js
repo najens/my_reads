@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Book from './Book';
 
+/**
+ * Stateless component that displays bookshelves for books
+ * that the user is reading, wants to read, or has read.
+ */
 class MyReads extends React.Component {
     static propTypes = {
         reading: PropTypes.array.isRequired,
@@ -10,6 +14,7 @@ class MyReads extends React.Component {
         read: PropTypes.array.isRequired,
         onUpdateShelf: PropTypes.func.isRequired
     }
+
     render () {
         const { reading, toRead, read, onUpdateShelf } = this.props;
 

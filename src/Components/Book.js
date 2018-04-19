@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Stateless component that displays a book's
+ * thumbnail, title, and list of authors
+ */
 class Book extends React.Component {
     static propTypes = {
         book: PropTypes.object.isRequired,
         onUpdateShelf: PropTypes.func.isRequired
     }
+
     render () {
         const { book, onUpdateShelf } = this.props;
 

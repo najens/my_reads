@@ -4,6 +4,10 @@ import MyReads from './MyReads';
 import SearchBooks from './SearchBooks';
 import * as BooksAPI from '../utils/BooksAPI';
 
+/**
+ * Main component for the application. It contains the routes that make it
+ * possible to navigate throughout the different parts of the application.
+ */
 class App extends Component {
     state = {
         books: [],
