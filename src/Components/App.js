@@ -25,6 +25,13 @@ class App extends Component {
             })
     }
 
+    /**
+     * After component mounts, get all books and update state
+     */
+    componentDidMount() {
+        this.getBooks()
+    }
+
     render() {
         return (
             <div className="App">
