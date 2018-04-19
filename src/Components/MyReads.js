@@ -187,7 +187,7 @@ class MyReads extends React.Component {
                     <Link to='/search'>Add a book</Link>
                 </div>
             </div>
-        )
+        );
     }
 }
 
