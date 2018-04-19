@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
+import MyReads from './MyReads';
 import * as BooksAPI from '../utils/BooksAPI';
 
 class App extends Component {
@@ -79,7 +81,14 @@ class App extends Component {
 
         return (
             <div className="App">
-                
+                <Route exact path='/' render={() => (
+                    <MyReads
+                        reading={reading}
+                        toRead={toRead}
+                        read={read}
+                        onUpdateShelf={this.updateShelf}
+                    />
+                )} />
             </div>
         );
     }
