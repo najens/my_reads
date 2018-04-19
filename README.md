@@ -2,7 +2,7 @@
 myreads is a React web application that allows a user to categorize and keep track of books that they have read, want to read, or are currently reading.
 
 ## Test Out App
-Go to https://najens.github.io/neighborhood_map/ to test out app.
+Go to https://najens.github.io/my_reads/ to test out app.
 
 ## Software Requirements
 - [git](https://git-scm.com/downloads)
