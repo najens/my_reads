@@ -21,7 +21,7 @@ class App extends Component {
                     reading: books.filter((book) => book.shelf === 'currentlyReading'),
                     toRead: books.filter((book) => book.shelf === 'wantToRead'),
                     read: books.filter((book) => book.shelf === 'read')
-                })
+                });
             })
     }
 
@@ -29,7 +29,7 @@ class App extends Component {
      * After component mounts, get all books and update state
      */
     componentDidMount() {
-        this.getBooks()
+        this.getBooks();
     }
 
     /**
@@ -41,8 +41,8 @@ class App extends Component {
     updateShelf = (book, shelf) => {
         BooksAPI.update(book, shelf)
             .then(() => {
-                book.shelf = shelf
-                this.updateBookStatus(book)
+                book.shelf = shelf;
+                this.updateBookStatus(book);
             })
     }
 
@@ -75,6 +75,8 @@ class App extends Component {
     };
 
     render() {
+        const { reading, toRead, read } = this.state;
+
         return (
             <div className="App">
                 
