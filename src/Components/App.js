@@ -25,8 +25,12 @@ class App extends Component {
             .then((books) => {
                 this.setState({
                     books: books,
-                    reading: books.filter((book) => book.shelf === 'currentlyReading'),
-                    toRead: books.filter((book) => book.shelf === 'wantToRead'),
+                    reading: books.filter((book) => (
+                        book.shelf === 'currentlyReading')
+                    ),
+                    toRead: books.filter((book) => (
+                        book.shelf === 'wantToRead')
+                    ),
                     read: books.filter((book) => book.shelf === 'read')
                 });
             })
@@ -43,7 +47,8 @@ class App extends Component {
      * Send API request to update book shelf and update state
      *
      * @param {object} book containing at minimum an `id` attribute
-     * @param {string} shelf contains one of ["wantToRead", "currentlyReading", "read", "none"]
+     * @param {string} shelf contains one of ["wantToRead",
+     *                       "currentlyReading", "read", "none"]
      */
     updateShelf = (book, shelf) => {
         BooksAPI.update(book, shelf)
@@ -75,8 +80,12 @@ class App extends Component {
 
         this.setState({
             books: books,
-            reading: books.filter((book) => book.shelf === 'currentlyReading'),
-            toRead: books.filter((book) => book.shelf === 'wantToRead'),
+            reading: books.filter((book) => (
+                book.shelf === 'currentlyReading')
+            ),
+            toRead: books.filter((book) => (
+                book.shelf === 'wantToRead')
+            ),
             read: books.filter((book) => book.shelf === 'read')
         });
     };
@@ -98,6 +107,7 @@ class App extends Component {
 
         return (
             <div className="App">
+                {/* Only render this component on exact path */}
                 <Route exact path='/' render={() => (
                     <MyReads
                         reading={reading}

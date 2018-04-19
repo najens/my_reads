@@ -18,6 +18,10 @@ class Book extends React.Component {
             <li>
                 <div className="book">
                     <div className="book-top">
+                        {/*
+                            If the book has a thumbnail display it,
+                            otherwise display an empty thumbnail
+                        */}
                         <div
                             className="book-cover"
                             style={book.imageLinks ? {
@@ -31,29 +35,71 @@ class Book extends React.Component {
                             }}
                         ></div>
                         <div className="book-shelf-changer">
-                            <select value={book.shelf} onChange={(event) => onUpdateShelf(book, event.target.value)}>
-                                <option value="invalid" disabled>Move to...</option>
+                            {/*
+                                When the book shelf is changed,
+                                update the shelf and state
+                            */}
+                            <select
+                                value={book.shelf}
+                                onChange={(event) => (
+                                    onUpdateShelf(book, event.target.value)
+                                )}
+                            >
+                                <option value="invalid" disabled>
+                                    Move to...
+                                </option>
+                                {/*
+                                    For each option, if the option
+                                    matches the current book shelf,
+                                    display a tick mark next ito it
+                                */}
                                 {book.shelf === "currentlyReading" ?
-                                    <option value="currentlyReading">&#10003; Currently Reading &nbsp; &nbsp;</option> :
-                                    <option value="currentlyReading">&nbsp; &nbsp; Currently Reading &nbsp; &nbsp;</option>
+                                    <option value="currentlyReading">
+                                        &#10003;
+                                        Currently Reading
+                                        &nbsp;
+                                        &nbsp;
+                                    </option> :
+                                    <option value="currentlyReading">
+                                        &nbsp;
+                                        &nbsp;
+                                        Currently Reading
+                                        &nbsp;
+                                        &nbsp;
+                                    </option>
                                 }
                                 {book.shelf === "wantToRead" ?
-                                    <option value="wantToRead">&#10003; Want to Read</option> :
-                                    <option value="wantToRead">&nbsp; &nbsp; Want to Read</option>
+                                    <option value="wantToRead">
+                                        &#10003; Want to Read
+                                    </option> :
+                                    <option value="wantToRead">
+                                        &nbsp; &nbsp; Want to Read
+                                    </option>
                                 }
                                 {book.shelf === "read" ?
-                                    <option value="read">&#10003; Read</option> :
-                                    <option value="read">&nbsp; &nbsp; Read</option>
+                                    <option value="read">
+                                        &#10003; Read
+                                    </option> :
+                                    <option value="read">
+                                        &nbsp; &nbsp; Read
+                                    </option>
                                 }
                                 {book.shelf === "none" ?
-                                    <option value="none">&#10003; None</option> :
-                                    <option value="none">&nbsp; &nbsp; None</option>
+                                    <option value="none">
+                                        &#10003; None
+                                    </option> :
+                                    <option value="none">
+                                        &nbsp; &nbsp; None
+                                    </option>
                                 }
                             </select>
                         </div>
                     </div>
                     <div className="book-title">{book.title}</div>
                     <ol className="book-authors">
+                        {/*
+                            If the book has authors, display each author
+                        */}
                         {book.authors ? book.authors.map((author, index) => (
                             <li key={index}>{author}</li>
                         )) : null}
