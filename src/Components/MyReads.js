@@ -11,9 +11,9 @@ class MyReads extends React.Component {
     constructor(props) {
         super(props);
         this.shelves = [
-            {title: 'Currently Reading'},
-            {title: 'Want to Read'},
-            {title: 'Read'}
+            { title: 'Currently Reading' },
+            { title: 'Want to Read' },
+            { title: 'Read' }
         ];
     }
 
@@ -56,10 +56,10 @@ class MyReads extends React.Component {
                         */}
                         {this.shelves.map((shelf, index) => (
                             <BookShelf
-                                key={index}
-                                title={shelf.title}
-                                bookList={this.getBookList(shelf)}
-                                onUpdateShelf={onUpdateShelf}
+                                key={ index }
+                                title={ shelf.title }
+                                bookList={ this.getBookList(shelf) }
+                                onUpdateShelf={ onUpdateShelf }
                             />
                         ))}
                     </div>

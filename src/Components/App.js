@@ -113,16 +113,16 @@ class App extends Component {
                 {/* Only render this component on exact path */}
                 <Route exact path='/' render={() => (
                     <MyReads
-                        reading={reading}
-                        toRead={toRead}
-                        read={read}
+                        reading={ reading }
+                        toRead={ toRead }
+                        read={ read }
                         onUpdateShelf={this.updateShelf}
                     />
                 )} />
                 <Route path='/search' render={() => (
                     <SearchBooks
-                        onUpdateShelf={this.updateShelf}
-                        getBookShelf={this.getBookShelf}
+                        onUpdateShelf={ this.updateShelf }
+                        getBookShelf={ this.getBookShelf }
                     />
                 )} />
             </div>

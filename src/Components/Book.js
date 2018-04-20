@@ -65,27 +65,27 @@ import PropTypes from 'prop-types';
                              */}
                              {options.map((option, index) => (
                                 book.shelf === option.val ?
-                                    <option key={index} value={option.val}>
+                                    <option key={ index } value={ option.val }>
                                         &#10003;&nbsp;
-                                        {option.title}
+                                        { option.title }
                                         &nbsp;&nbsp;
                                     </option> :
-                                    <option key={index} value={option.val}>
+                                    <option key={ index } value={ option.val }>
                                         &nbsp;&nbsp;&nbsp;
-                                        {option.title}
+                                        { option.title }
                                         &nbsp;&nbsp;
                                     </option>
                              ))}
                          </select>
                      </div>
                  </div>
-                 <div className="book-title">{book.title}</div>
+                 <div className="book-title">{ book.title }</div>
                  <ol className="book-authors">
                      {/*
                          If the book has authors, display each author
                      */}
                      {book.authors ? book.authors.map((author, index) => (
-                         <li key={index}>{author}</li>
+                         <li key={ index }>{ author }</li>
                      )) : null}
                  </ol>
              </div>

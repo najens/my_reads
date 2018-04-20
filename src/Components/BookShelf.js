@@ -17,9 +17,9 @@ import Book from './Book';
                      */}
                      {bookList.map((book) => (
                          <Book
-                             key={book.id}
-                             book={book}
-                             onUpdateShelf={onUpdateShelf}
+                             key={ book.id }
+                             book={ book }
+                             onUpdateShelf={ onUpdateShelf }
                          />
                      ))}
                  </ol>

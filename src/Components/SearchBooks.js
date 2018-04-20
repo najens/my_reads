@@ -103,7 +103,7 @@ class SearchBooks extends React.Component {
                         <DebounceInput
                             type='text'
                             placeholder='Search by title or author'
-                            value={query}
+                            value={ query }
                             onChange={(event) => (
                                 this.updateQuery(event.target.value)
                             )}
@@ -124,9 +124,9 @@ class SearchBooks extends React.Component {
                             */}
                             {searchBooks.map((book) => (
                                 <Book
-                                    key={book.id}
-                                    book={book}
-                                    onUpdateShelf={onUpdateShelf}
+                                    key={ book.id }
+                                    book={ book }
+                                    onUpdateShelf={ onUpdateShelf }
                                 />
                             ))}
                         </ol>
