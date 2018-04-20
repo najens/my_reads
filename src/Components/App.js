@@ -67,7 +67,7 @@ class App extends Component {
      * @param {object} book
      */
     updateBookStatus = (book) => {
-        const books = this.state.books;
+        const { books } = this.state;
         const bookIndex = books
             .findIndex((item) => item.id === book.id);
 
